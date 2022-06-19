@@ -12,10 +12,17 @@ class Pokemon:
         self.type2 = type2
         self.moves_list = [None, None, None, None]
 
+    def __iter__(self):
+        yield 'name', self.name
+        yield 'nickname', self.nickname
+        yield 'dex_number', self.dex_number
+        yield 'type1', self.type1
+        yield 'type2', self.type2
+        yield 'moves_list', self.moves_list
+
     def set_move(self, index: int, move: Move):
         self.moves_list[index] = move
 
     def set_all_moves (self, moves_list: List[Move]) -> List[Move]:
         self.moves_list = moves_list
         return self.moves_list
-        
